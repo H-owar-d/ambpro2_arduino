@@ -39,7 +39,7 @@ int check_download_process = 0;
 
 string auto_board, auto_user_selection, flash_erase_mode_user_selection, flash_speed;
 string serial_port, auto_tool_name, flash_tool_name, fw1_address;
-string upload_mode_user_selection, upload_mode_user_selection_nn, upload_mode_user_selection_voe;
+string upload_mode_user_selection, upload_mode_user_selection_nn, upload_mode_user_selection_voe, upload_speed;
 
 string VOE_address_PT_ISP_IQ = "0x400000";
 string NN_address_PT_NN_MDL = "0x840000";
@@ -187,7 +187,7 @@ int main(int argc, char *argv[]) {
     fw1_address = argv[10];
     upload_mode_user_selection_nn = argv[11];
     upload_mode_user_selection_voe = argv[12];
-
+	upload_speed = argv[13];
     if (argv[9]) {
         upload_mode_user_selection = argv[9];
     } else {
@@ -217,7 +217,14 @@ int main(int argc, char *argv[]) {
         cout << "    Start Upload Flash" << endl;
         check_image_upload = 100;
     }
-
+	
+	if (upload_speed == "speed1m")
+		flash_speed = 921600;
+	else if (upload_speed == "speed2m")
+		flash_speed = 2000000;
+	else
+		flash_speed = 2000000;
+		
     thread t2(download_indicate);
     thread t1(download_process);
 

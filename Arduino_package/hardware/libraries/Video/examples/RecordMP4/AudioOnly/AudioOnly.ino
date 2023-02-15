@@ -21,6 +21,9 @@ void setup() {
 
     // Configure audio peripheral for audio data output
     audio.begin();
+#ifdef BOARD_AMB82_HUB8735
+    audio.dmic_pinchange();
+#endif   
     // Configure AAC audio encoder
     aac.begin();
 

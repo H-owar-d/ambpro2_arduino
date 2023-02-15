@@ -202,6 +202,5 @@ void SPIClass::end(void)
     spi_free((spi_t *)pSpiMaster);
 }
 
-//SPIClass SPI((void *)(&spi_obj0), 13, 14, 15, 12);
-SPIClass SPI((void *)(&spi_obj0), 8, 10, 9, 7);
-//SPIClass SPI1((void *)(&spi_obj1), 2, 0, 1, 3);
+SPIClass SPI((void *)(&spi_obj0), 13, 14, 15, 12);
+SPIClass SPI1((void *)(&spi_obj1), 2, 0, 1, 3);

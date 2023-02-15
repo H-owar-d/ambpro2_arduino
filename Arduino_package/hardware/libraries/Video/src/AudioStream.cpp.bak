@@ -123,14 +123,6 @@ void Audio::printInfo(void) {
     printf("\r\n");
 }
 
-void Audio::dmic_pinchange(void) {
-	if (_p_mmf_context == NULL) {
-        printf("dmic_pinchange fail\r\n");
-        return;
-    }
-	printf("dmic_pinchange\r\n");
-	audioDMICPinChange(_p_mmf_context);
-}
 
 AAC::AAC(void) {
     if (_p_mmf_context == NULL) {
