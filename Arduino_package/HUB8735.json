@@ -16,7 +16,7 @@
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
-          "url": "https://github.com/H-owar-d/ambpro2_arduino/tree/dev/Arduino_package/release/4.0.1-build20230110_HUB8735.tar.gz",
+          "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.1-build20230110_HUB8735.tar.gz",
           "archiveFileName": "4.0.1-build20230110_HUB8735.tar.gz",
           "checksum": "SHA-256:fc10e8ea36961596fa38f655f1f26a7e9959b7f059bd1b2e5dc44ee80e2d4d42",
           "size": "87785860",
