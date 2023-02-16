@@ -5,6 +5,7 @@ menu.UploadModeSelection=* Upload Mode
 menu.UploadVideoBin=**      Video ISP Bin
 menu.UploadNeuralNetworkBin=**      Neural Network Bin
 menu.StdLibInit=* Standard Lib Enable
+menu.UploadSpeed=* Upload Speed
 
 ##############################################################
 # PLEASE DO NOT PUT BOARDS ABOVE THE OFFICIAL AMEBA BOARDS! ##

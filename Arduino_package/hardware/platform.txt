@@ -5,7 +5,7 @@
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
 
-name=AmebaPro2 ARM (32-bits) Boards
+name=AmebaPro2 ARM (32-bits) Boards - ideasHatch
 version=4.0.X
 toolchain_version=1.0.1
 
@@ -162,11 +162,11 @@ recipe.output.save_file=flash_ntz.bin
 tools.ameba_pro2_tools.upload.params.verbose=
 tools.ameba_pro2_tools.upload.params.quiet=
 
-tools.ameba_pro2_tools.upload.pattern.windows="{runtime.tools.ameba_pro2_tools.path}/image_windows.exe" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "2000000" "uartfwburn.exe" "Auto_Flash_Pro2_V3.3_win.exe" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
+tools.ameba_pro2_tools.upload.pattern.windows="{runtime.tools.ameba_pro2_tools.path}/image_windows.exe" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "{build.upload_speed}" "uartfwburn.exe" "Auto_Flash_Pro2_V3.3_win.exe" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
 
-tools.ameba_pro2_tools.upload.pattern.linux="{runtime.tools.ameba_pro2_tools.path}/image_linux" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "2000000" "uartfwburn.linux" "Auto_Flash_Pro2_V3.3_linux" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
+tools.ameba_pro2_tools.upload.pattern.linux="{runtime.tools.ameba_pro2_tools.path}/image_linux" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "{build.upload_speed}" "uartfwburn.linux" "Auto_Flash_Pro2_V3.3_linux" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
 
-tools.ameba_pro2_tools.upload.pattern.macosx="{runtime.tools.ameba_pro2_tools.path}/image_macos" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "2000000" "uartfwburn.darwin" "Auto_Flash_Pro2_V3.3_macos" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
+tools.ameba_pro2_tools.upload.pattern.macosx="{runtime.tools.ameba_pro2_tools.path}/image_macos" "{runtime.tools.ameba_pro2_tools.path}" "{serial.port}" "{board}" "{build.auto_upload_mode}" "{build.erase_flash}" "{build.upload_speed}" "uartfwburn.darwin" "Auto_Flash_Pro2_V3.3_macos" "{build.upload_mode}" "0x80000" "{build.upload_mode_nn}" "{build.upload_mode_voe}" {upload.verbose}
 
 #tools.ameba_pro2_tools.upload.network_pattern="{ameba.tools_path}/upload_ota.exe" -i "{serial.port}" -p "{network.port}" -f "{ameba.tools_path}\ota.bin"
 #tools.ameba_pro2_tools.upload.network_pattern.windows="{ameba.tools_path}/upload_ota.exe" -i "{serial.port}" -p "{network.port}" -f "{ameba.tools_path}\ota.bin"
