@@ -13,7 +13,7 @@
           "architecture": "AmebaPro2",
           "version": "4.0.1-build20230110",
           "category": "Contributed",
-          "description": "Reference AMEBA-MINI 4.0.1 latest release version",
+          "sentence": "Reference AMEBA-MINI 4.0.1 latest release version",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
