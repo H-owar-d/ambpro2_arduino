@@ -58,9 +58,9 @@ Ameba_HUB-8735.menu.UploadNeuralNetworkBin.No=No
 Ameba_HUB-8735.menu.UploadNeuralNetworkBin.No.build.upload_mode_nn=NNno
 
 Ameba_HUB-8735.menu.UploadSpeed.Speed=921600
-Ameba_HUB-8735.menu.UploadSpeed.Speed.build.upload_speed=speed1m
+Ameba_HUB-8735.menu.UploadSpeed.Speed.build.upload_speed=921600
 Ameba_HUB-8735.menu.UploadSpeed.Speed2M=2000000
-Ameba_HUB-8735.menu.UploadSpeed.Speed2M.build.upload_speed=speed2m
+Ameba_HUB-8735.menu.UploadSpeed.Speed2M.build.upload_speed=2000000
 
 Ameba_HUB-8735.menu.StdLibInit.Disable=NA
 Ameba_HUB-8735.menu.StdLibInit.Disable.build.extra_flags=-DARDUINO_AMBPRO2 -DBOARD_AMB82_HUB8735 {build.usb_flags}
