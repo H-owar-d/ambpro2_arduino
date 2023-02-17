@@ -11,7 +11,7 @@
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
-          "version": "4.0.1-build20230217 refernce AMB82-MINI 4.0.1-build20230201",
+          "version": "4.0.1-build20230217",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
