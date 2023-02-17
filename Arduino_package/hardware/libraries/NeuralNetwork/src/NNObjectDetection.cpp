@@ -60,7 +60,7 @@ void NNObjectDetection::configThreshold(float confidence_threshold, float nms_th
     od_nms_thresh = nms_threshold;
 }
 
-void NNObjectDetection::begin(int model) {
+void NNObjectDetection::begin(void) {
     if (_p_mmf_context == NULL) {
         _p_mmf_context = mm_module_open(&vipnn_module);
     }
@@ -88,16 +88,7 @@ void NNObjectDetection::begin(int model) {
         use_roi = 0;
     }
 
-    if (model == 1) {
-        vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_MODEL, (int)&yolov3_tiny);
-    } else if (model == 2) {
-        vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_MODEL, (int)&yolov4_tiny);
-    } else if (model == 3) {
-        vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_MODEL, (int)&yolov7_tiny);
-    } else {
-        printf("Selected YOLO model not supported!\r\n");
-        return;
-    }
+    vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_MODEL, (int)&yolov4_tiny);
     vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_IN_PARAMS, (int)&roi_nn);
     vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_DISPPOST, (int)ODResultCallback);
     vipnn_control(_p_mmf_context->priv, CMD_VIPNN_SET_CONFIDENCE_THRES, (int)&od_confidence_thresh);
@@ -149,7 +140,7 @@ void NNObjectDetection::ODResultCallback(void *p, void *img_param) {
     for (int i = 0; i < result->obj_num; i++) {
         if (use_roi) {
             // Scale result box back to original frame size
-            object_result_vector[i].result.classes = result->res[i].classes;
+            object_result_vector[i].result.type = result->res[i].type;
             object_result_vector[i].result.score = result->res[i].score;
             object_result_vector[i].result.top_x = result->res[i].top_x * xscale + xoffset;
             object_result_vector[i].result.bot_x = result->res[i].bot_x * xscale + xoffset;
@@ -171,11 +162,11 @@ void NNObjectDetection::ODResultCallback(void *p, void *img_param) {
 }
 
 int ObjectDetectionResult::type(void) {
-    return ((int)(result.classes));
+    return ((int)(result.type));
 }
 
 const char* ObjectDetectionResult::name(void) {
-    return coco_name_get_by_id((int)result.classes);
+    return coco_name_get_by_id((int)result.type);
 }
 
 int ObjectDetectionResult::score(void) {

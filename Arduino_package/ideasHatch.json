@@ -8,12 +8,44 @@
       },
 
       "platforms": [
+      	{
+          "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
+          "architecture": "AmebaPro2",
+          "version": "4.0.1-build20230217 refernce AMB82-MINI 4.0.1-build20230201",
+          "category": "Contributed",
+          "help": {
+            "online": "https://forum.amebaiot.com/"
+          },
+          "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.1-build20230217_HUB8735.tar.gz",
+          "archiveFileName": "4.0.1-build20230217_HUB8735.tar.gz",
+          "checksum": "SHA-256:7a95ba98b339032c25f20b6b7430267f4449e94ddf648b190627cb88430491ee",
+          "size": "87670912",
+          "boards": [
+            {"name": "HUB 8735 (RTL8735B)"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_toolchain",
+              "version": "1.0.1-p1"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_toolchain",
+              "version": "1.0.1-p2"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_tools",
+              "version": "1.1.1"
+            }
+          ]
+        },
 		{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.1-build20230110",
           "category": "Contributed",
-          "sentence": "Reference AMEBA-MINI 4.0.1 latest release version",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -38,7 +70,7 @@
             {
               "packager": "ideasHatch",
               "name": "ameba_pro2_tools",
-              "version": "1.0.9"
+              "version": "1.1.1"
             }
           ]
         }
@@ -149,60 +181,6 @@
               "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_macos-1.1.1.tar.gz",
               "checksum": "SHA-256:a950931a0086c019578b14b75a195094a6ebdc1599525c67a3e07587b682054a",
               "size": "765788"
-            }
-          ]
-        },
-		{
-          "name": "ameba_pro2_tools",
-          "version": "1.1.0",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "archiveFileName": "ameba_pro2_tools_windows-1.1.0.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_windows-1.1.0.tar.gz",
-              "checksum": "SHA-256:7b45b292018a341c13ba6830a09ec2c80df7666dca65f45f0479cc643639c44f",
-              "size": "7894672"
-            },
-            {
-              "host": "x86_64-pc-linux-gnu",
-              "archiveFileName": "ameba_pro2_tools_linux-1.1.0.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_linux-1.1.0.tar.gz",
-              "checksum": "SHA-256:713f0cc783c72a5ab83bb3bd9bdd41eea84378fa6bc4aaa789c5e917121e3295",
-              "size": "4010774"
-            },
-            {
-              "host": "x86_64-apple-darwin",
-              "archiveFileName": "ameba_pro2_tools_macos-1.1.0.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_macos-1.1.0.tar.gz",
-              "checksum": "SHA-256:4c5f4d16524b7c11e98efb27f10abdce1e6c23dff9922faa957a5000e2576b5a",
-              "size": "765841"
-            }
-          ]
-        },
-		{
-          "name": "ameba_pro2_tools",
-          "version": "1.0.9",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "archiveFileName": "ameba_pro2_tools_windows-1.0.9.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_windows-1.0.9.tar.gz",
-              "checksum": "SHA-256:268499224e99ea16cac45b5ecde432732758e0815c5398b65657091d82c7c3f5",
-              "size": "7894555"
-            },
-            {
-              "host": "x86_64-pc-linux-gnu",
-              "archiveFileName": "ameba_pro2_tools_linux-1.0.9.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_linux-1.0.9.tar.gz",
-              "checksum": "SHA-256:7705f0f713d40e4b520338898345409e153de120b299c264dde03d33ecf6ab67",
-              "size": "4010944"
-            },
-            {
-              "host": "x86_64-apple-darwin",
-              "archiveFileName": "ameba_pro2_tools_macos-1.0.9.tar.gz",
-              "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_macos-1.0.9.tar.gz",
-              "checksum": "SHA-256:8e6ff96496ef03566435476e3c4a6e769612f439b0e5f3cb9d5b0db824c1aec0",
-              "size": "765816"
             }
           ]
         }

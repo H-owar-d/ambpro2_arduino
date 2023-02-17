@@ -326,21 +326,18 @@ int Video::snapshotCB0(uint32_t jpeg_addr, uint32_t jpeg_len) {
     //printf("snapshot 0 addr=%X, size=%d", (int)jpeg_addr, (int)jpeg_len);
     return 0;
 }
-
 int Video::snapshotCB1(uint32_t jpeg_addr, uint32_t jpeg_len) {
     image_addr[1] = jpeg_addr;
     image_len[1] = jpeg_len;
     //printf("snapshot 1 addr=%X, size=%d", (int)jpeg_addr, (int)jpeg_len);
     return 0;
 }
-
 int Video::snapshotCB2(uint32_t jpeg_addr, uint32_t jpeg_len) {
     image_addr[2] = jpeg_addr;
     image_len[2] = jpeg_len;
     //printf("snapshot 2 addr=%X, size=%d", (int)jpeg_addr, (int)jpeg_len);
     return 0;
 }
-
 int Video::snapshotCB3(uint32_t jpeg_addr, uint32_t jpeg_len) {
     image_addr[3] = jpeg_addr;
     image_len[3] = jpeg_len;

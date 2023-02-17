@@ -42,6 +42,10 @@ void setup() {
     rtsp.configVideo(config);
     rtsp.begin();
 
+    // Configure OSD for drawing on high resolution video stream
+    OSD.configVideo(CHANNEL, config);
+    OSD.begin();
+
     // Configure motion detection for low resolution RGB video stream
     MD.configVideo(configMD);
     MD.begin();
@@ -68,9 +72,6 @@ void setup() {
     // Start data stream from low resolution video channel
     Camera.channelBegin(CHANNELMD);
 
-    // Configure OSD for drawing on high resolution video stream
-    OSD.configVideo(CHANNEL, config);
-    OSD.begin();
 }
 
 void loop() {
@@ -113,8 +114,6 @@ void loop() {
         int xmax = (int)((kmax + 1) * config.width() / MDRES) - 1;
         int ymax = (int)((jmax + 1) * config.height() / MDRES) - 1;
         OSD.drawRect(CHANNEL, xmin, ymin, xmax, ymax, 3, OSD_COLOR_GREEN);
-    } else {
-        OSD.clearAll(CHANNEL);
     }
     OSD.update(CHANNEL);
     delay(100);

@@ -6,7 +6,7 @@
 
 #include "WiFi.h"
 #include "StreamIO.h"
-#include "VideoStream.h"
+#include "Videostream.h"
 #include "AudioStream.h"
 #include "RTSP.h"
 
@@ -47,7 +47,11 @@ void setup() {
     Camera.videoInit();
 
     // Configure audio peripheral for audio data output
+
     audio.begin();
+#ifdef BOARD_AMB82_HUB8735
+    audio.dmic_pinchange();
+#endif    
     // Configure AAC audio encoder
     aac.begin();
 

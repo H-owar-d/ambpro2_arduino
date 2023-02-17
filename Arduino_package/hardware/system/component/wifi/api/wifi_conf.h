@@ -1159,12 +1159,10 @@ int wifi_wowlan_set_arpreq_keepalive(u8  powerbit,
  *
  * @param[in]   gpio : gpiof number
  * @param[in]   interval : pull ctrl interval
- * @param[in]   pull_ctrl : gpio pull ctrl
  * @return  RTW_SUCCESS
  */
 int wifi_wowlan_set_wdt(u8  gpio,
-						u8  interval,
-						u8	pull_ctrl);
+						u8  interval);
 #endif
 
 // WoWlan related
