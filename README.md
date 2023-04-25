@@ -1,19 +1,20 @@
 # Ameba Arduino SDK (ambpro2_arduino)
 
 
-## 1. About `dev` & `main` branch
+## 1. About HUB 8735 Ameba Arduino
 
-|Branch|Usage|Remarks|
-|:-----|:-----|:-----|
-|`dev`| merge `PR` & early release| `dev` branch is open to `Pull Request`(PR) for ***feature addition*** and ***bug fix***. It will also have the latest features which you can access via this link https://github.com/ambiot/ambpro2_arduino/raw/dev/Arduino_package/package_realtek.com_amebapro2_early_index.json (refer below for steps to install early release on Arduino IDE, please be noted that as this is a **early release**, bugs and/or performance issue might occur and break your program) |
-|`main` | stable release| `main` branch is only for hosting stable release, no `PR` will be merged, refer to the following steps to use the stable release |
+> The HUB 8735 Arduino SDK is fork from https://github.com/ambiot/ `Arduino SDK Development` `AmebaPro2 Family`
+> The version mapping is following below.
 
-
-For all `release` information, please visit this [link](https://github.com/ambiot/ambpro2_arduino/releases).
-
+|HUB 8735 Version      | ambiot Version       |Remarks                         |
+|:---------------------|:---------------------|:-------------------------------|
+|`4.0.1-build20230110` |`4.0.1-build20230110` | Modify pin define for HUB 8735 board 		|
+|`4.0.1-build20230217` |`4.0.2-build20230206` | ***feature addition*** and ***bug fix***	| 
+|`4.0.2-build20230220` |`4.0.2-build20230216` | ***feature addition*** and ***bug fix***	|
+|`4.0.3-build20230322` |`4.0.2-build20230220` | ***feature addition*** and ***bug fix***	|
 </br>
 
-## 2. How to add Realtek Ameba Arduino package to `Arduino IDE`:
+## 2. How to add HUB 8735 Ameba Arduino package to `Arduino IDE`:
 
 > You can refer to this link to get started: https://www.amebaiot.com/en/amebad-amb82-mini-arduino-getting-started/
 > , or follow the steps below.
@@ -28,7 +29,7 @@ For all `release` information, please visit this [link](https://github.com/ambio
 
     Copy and paste the following link into the field and click "OK",
 
-    https://github.com/ambiot/ambpro2_arduino/raw/main/Arduino_package/package_realtek.com_amebapro2_index.json
+    https://github.com/ideashatch/HUB-8735/raw/main/amebapro2_arduino/Arduino_package/ideasHatch.json
 
     > We also suggest to enable "Show verbose output" options on "compilation" and "upload" in Preference for easier debugging.
     
@@ -36,13 +37,13 @@ For all `release` information, please visit this [link](https://github.com/ambio
 
 2. **Install Ameba board in *"Board Manager"***
 
-    Open **"Tools" -> "Board" -> "Board Manager"**, wait for it to update additional hardware configurations, then type **"ameba"** in the search bar, you will see Realtek Ameba in the list.
+    Open **"Tools" -> "Board" -> "Board Manager"**, wait for it to update additional hardware configurations, then type **"HUB 8735"** or **"ideashatch"** in the search bar, you will see Realtek Ameba in the list.
 
     Press **"Install"** to start the installation.
     
     </br>
 
-3. **Select your Ameba model in *"Tools" -> "Board" -> "AmebaPro2 ARM (32-bits) Boards"***
+3. **Select your Ameba model in *"Tools" -> "Board" -> "AmebaPro2 ARM (32-bits) Boards - ideasHatch"***
 
     > Make sure you select the correct model for your board, otherwise your program might not work properly 
 
