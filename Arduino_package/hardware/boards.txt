@@ -45,9 +45,9 @@ Ameba_HUB-8735.menu.AutoUploadMode.Enable=Enable
 Ameba_HUB-8735.menu.AutoUploadMode.Enable.build.auto_upload_mode=Enable
 
 Ameba_HUB-8735.menu.StdLibInit.Disable=Disable
-Ameba_HUB-8735.menu.StdLibInit.Disable.build.extra_flags=-DARDUINO_SDK DARDUINO_AMBPRO2 -DBOARD_AMB82_HUB8735 {build.usb_flags}
+Ameba_HUB-8735.menu.StdLibInit.Disable.build.extra_flags=-DARDUINO_SDK -DARDUINO_AMBPRO2 -DBOARD_AMB82_HUB8735 {build.usb_flags}
 Ameba_HUB-8735.menu.StdLibInit.Enable=Arduino_STD_PRINTF
-Ameba_HUB-8735.menu.StdLibInit.Enable.build.extra_flags=-DARDUINO_SDK DARDUINO_AMBPRO2 -DBOARD_AMB82_HUB8735 {build.usb_flags} -DArduino_STD_PRINTF
+Ameba_HUB-8735.menu.StdLibInit.Enable.build.extra_flags=-DARDUINO_SDK -DARDUINO_AMBPRO2 -DBOARD_AMB82_HUB8735 {build.usb_flags} -DArduino_STD_PRINTF
 
 
 Ameba_HUB-8735.menu.UploadSpeed.Speed=921600
