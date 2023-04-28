@@ -36,7 +36,7 @@ void setup() {
 
     if (client.connect(server, 443)) {
         Serial.println("connected to server");
-        client.send("Line Notify message");						//Enter your message
+        client.send("Line Notify message",0);						//Enter your message
     }
     else
     {
