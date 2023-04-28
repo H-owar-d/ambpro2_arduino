@@ -8,7 +8,7 @@
 #include "StreamIO.h"
 #include "AudioStream.h"
 
-#define PRESET 0
+#define PRESET 3
 
 // Default audio preset configurations:
 // 0 :  8kHz Mono Analog Mic
@@ -36,8 +36,8 @@ void setup() {
 }
 
 void loop() {
-    micVolume = map(analogRead(A0), 0, 1020, 0, 100);
-    spkVolume = map(analogRead(A1), 0, 1020, 0, 100);
+    micVolume = map(analogRead(A0), 0, 1020, 0, 100);		//A0: GPIO_F0
+    spkVolume = map(analogRead(A1), 0, 1020, 0, 100);		//A1: GPIO_F1
     printf("Mic: %d | Spk: %d \r\n", micVolume, spkVolume);
     audio.setMicGain(micVolume);
     audio.setSpkGain(spkVolume);

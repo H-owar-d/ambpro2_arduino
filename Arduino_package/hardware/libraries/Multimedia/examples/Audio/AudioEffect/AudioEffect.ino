@@ -8,7 +8,7 @@
 #include "StreamIO.h"
 #include "AudioStream.h"
 
-#define PRESET 0
+#define PRESET 3
 
 // Default audio preset configurations:
 // 0 :  8kHz Mono Analog Mic
@@ -69,7 +69,7 @@ void setup() {
 void loop() {
     // Increasing boost level will increase mic sensitivity and background noise
     
-    value = map(analogRead(A0), 0, 1020, 0, 3);
+    value = map(analogRead(A0), 0, 1020, 0, 3);		//A0: GPIO_F0
     audio.setAMicBoost(value);
 //    audio.setDMicBoost(value);
     delay(1000);

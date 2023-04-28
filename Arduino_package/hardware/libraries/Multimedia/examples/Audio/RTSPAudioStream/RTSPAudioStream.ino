@@ -20,7 +20,7 @@
 AAC encoder;
 //G711E encoder;
 
-AudioSetting configA(1);
+AudioSetting configA(3);
 Audio audio;
 RTSP rtsp;
 StreamIO audioStreamer1(1, 1);   // 1 Input Audio -> 1 Output encoder

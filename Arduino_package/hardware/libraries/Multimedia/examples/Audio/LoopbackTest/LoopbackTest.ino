@@ -8,7 +8,7 @@
 #include "StreamIO.h"
 #include "AudioStream.h"
 
-#define PRESET 0
+#define PRESET 3
 
 // Default audio preset configurations:
 // 0 :  8kHz Mono Analog Mic

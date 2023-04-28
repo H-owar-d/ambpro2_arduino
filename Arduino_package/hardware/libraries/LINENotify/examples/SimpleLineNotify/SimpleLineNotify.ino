@@ -1,20 +1,14 @@
-#include <WiFi.h>
+﻿#include <WiFi.h>
 #include "SSLLineNotify.h"
 
-char ssid[] = "WINSTEC_5G"; // your network SSID (name)
-char pass[] = "2a43b09ff7";    // your network password (use for WPA, or use as key for WEP)
+char ssid[] = "yourNetwork"; // your network SSID (name)
+char pass[] = "Password";    // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
 int status = WL_IDLE_STATUS;
 
 char server[] = "notify-api.line.me";    // name address for Google (using DNS)
-/*
-char server[] = "notify-api.line.me";    // name address for Google (using DNS)
-char HOST[] = "notify-api.line.me"; //# 伺服器網址，不可動
-int PORT = 443;
-char API_URL[] = "/api/notify"; //# 連線對象URL，不可動
-char Linetoken[] = "Wp97BOXf2BKyiZZbyfs8XrX6cN2xvfeFnxUA7sM7kco"; //# 資料平台裝置的存取權限碼
-*/
+
 LineNotify client;
 void setup() {
     //Initialize serial and wait for port to open:
@@ -38,11 +32,11 @@ void setup() {
 
     Serial.println("\nStarting connection to server...");
     // if you get a connection, report back via serial:
-	client.setLineToken("Wp97BOXf2BKyiZZbyfs8XrX6cN2xvfeFnxUA7sM7kco");
-	
+	client.setLineToken("*******************************************");		//Enter your license
+
     if (client.connect(server, 443)) {
         Serial.println("connected to server");
-        client.send("Howard will marry");
+        client.send("Line Notify message");						//Enter your message
     }
     else
     {

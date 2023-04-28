@@ -20,7 +20,7 @@
 AAD decoder;
 //G711E decoder;
 
-AudioSetting configA(0);
+AudioSetting configA(3);
 Audio audio;
 RTP rtp;
 StreamIO audioStreamer1(1, 1);   // 1 Input RTP -> 1 Output decoder
