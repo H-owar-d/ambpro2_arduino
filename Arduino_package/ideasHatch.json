@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "ideasHatch",
+      "name": "realtek",
       "maintainer": "ideasHatch",
       "help": {
         "online": "https://forum.amebaiot.com/"
@@ -10,7 +10,7 @@
       "platforms": [
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "AmebaPro2",
+          "architecture": "HUB8735",
           "version": "4.0.3-build",
           "category": "Contributed",
           "help": {
@@ -25,17 +25,17 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "ideasHatch",
+              "packager": "realtek",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p1"
             },
             {
-              "packager": "ideasHatch",
+              "packager": "realtek",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p2"
             },
             {
-              "packager": "ideasHatch",
+              "packager": "realtek",
               "name": "ameba_pro2_tools",
               "version": "1.2.2.2"
             }
