@@ -10,8 +10,8 @@
       "platforms": [
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.4-build20230615",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.4-build20230615",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -43,8 +43,8 @@
         },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.4-build20230601",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.4-build20230601",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -76,8 +76,8 @@
         },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.3-build20230510",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.3-build20230510",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -109,8 +109,8 @@
         },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.3-build20230322",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.3-build20230322",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -142,8 +142,8 @@
         },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.2-build20230220",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.2-build20230220",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -175,8 +175,8 @@
         },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.1-build20230217",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.1-build20230217",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
@@ -208,8 +208,8 @@
         },
 		{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "HUB8735",
-          "version": "4.0.1-build20230110",
+          "architecture": "AmebaPro2",
+          "version": "ideasHatch-4.0.1-build20230110",
           "category": "Contributed",
           "help": {
             "online": "https://forum.amebaiot.com/"
