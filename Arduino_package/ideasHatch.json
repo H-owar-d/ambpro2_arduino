@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "ideasHatch",
+      "name": "realtek",
       "maintainer": "ideasHatch",
       "help": {
         "online": "https://forum.amebaiot.com/"
@@ -11,8 +11,8 @@
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
-          "version": "4.0.4-ideasHatch-build20230615",
-          "category": "Contributed",
+          "version": "a4.0.4-ideasHatch-build20230615",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -45,7 +45,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.4-ideasHatch-build20230601",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -78,7 +78,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.3-ideasHatch-build20230510",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -111,7 +111,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.3-ideasHatch-build20230322",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -144,7 +144,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.2-ideasHatch-build20230220",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -177,7 +177,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.1-ideasHatch-build20230217",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
@@ -210,7 +210,7 @@
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
           "version": "4.0.1-ideasHatch-build20230110",
-          "category": "Contributed",
+          "category": "ideasHatch",
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
