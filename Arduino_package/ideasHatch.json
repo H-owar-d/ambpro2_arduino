@@ -10,7 +10,7 @@
       "platforms": [
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "AmebaPro211",
+          "architecture": "AmebaPro2",
           "version": "4.0.4-ideasHatch-build20230615",
           "category": "Contributed",
           "help": {
