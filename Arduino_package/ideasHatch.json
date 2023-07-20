@@ -4,13 +4,13 @@
       "name": "realtek",
       "maintainer": "ideasHatch",
       "help": {
-        "online": "https://www.amebaiot.com/"
+        "online": "https://forum.amebaiot.com/"
       },
 
       "platforms": [
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
-          "architecture": "AmebaPro2",
+          "architecture": "AmebaPro21",
           "version": "4.0.4-ideasHatch-build20230615",
           "category": "ideasHatch",
           "help": {
