@@ -1,41 +1,41 @@
 {
   "packages": [
     {
-      "name": "realtek",
+      "name": "ideasHatch",
       "maintainer": "ideasHatch",
       "help": {
-        "online": "https://forum.amebaiot.com/123"
+        "online": "https://forum.amebaiot.com/"
       },
 
       "platforms": [
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
-          "version": "4.0.4-ideasHatch-build20230615",
+          "version": "4.0.4-ideasHatch-Release",
           "category": "Contributed",
           "help": {
             "online": "https://1forum.amebaiot.com/"
           },
-          "url": "https://github.com/ideashatch/HUB-8735/raw/main/amebapro2_arduino/Arduino_package/release/4.0.3-build20230510_HUB8735.tar.gz",
-          "archiveFileName": "4.0.3-build20230510_HUB8735.tar.gz",
-          "checksum": "SHA-256:809578753af65f65c95bae71560d0741e991f48dcd970557a4c49e26ee6ac505",
-          "size": "91103477",
+          "url": "https://github.com/ideashatch/HUB-8735/raw/main/amebapro2_arduino/Arduino_package/release/4.0.4_0721_Release.tar.gz",
+          "archiveFileName": "4.0.4_0721_Release.tar.gz",
+          "checksum": "SHA-256:76fda9edca8ced29277873a8840a4e757d82a53563122ca84775a0ceaa8eca18",
+          "size": "93561841",
           "boards": [
             {"name": "HUB 8735 (RTL8735B)"}
           ],
           "toolsDependencies": [
             {
-              "packager": "realtek",
+              "packager": "ideasHtach",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p1"
             },
             {
-              "packager": "realtek",
+              "packager": "ideasHtach",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p2"
             },
             {
-              "packager": "realtek",
+              "packager": "ideasHtach",
               "name": "ameba_pro2_tools",
               "version": "1.2.9.3"
             }
