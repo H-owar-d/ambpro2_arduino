@@ -25,17 +25,17 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "ideasHtach",
+              "packager": "ideasHatch",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p1"
             },
             {
-              "packager": "ideasHtach",
+              "packager": "ideasHatch",
               "name": "ameba_pro2_toolchain",
               "version": "1.0.1-p2"
             },
             {
-              "packager": "ideasHtach",
+              "packager": "ideasHatch",
               "name": "ameba_pro2_tools",
               "version": "1.2.9.3"
             }
