@@ -30,12 +30,13 @@
     Copy and paste the following link into the field and click "OK",
 
     https://github.com/ideashatch/HUB-8735/raw/main/amebapro2_arduino/Arduino_package/ideasHatch.json
-
+    https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/ideasHatch.json
+   
     > We also suggest to enable "Show verbose output" options on "compilation" and "upload" in Preference for easier debugging.
     
     </br>
 
-2. **Install Ameba board in *"Board Manager"***
+3. **Install Ameba board in *"Board Manager"***
 
     Open **"Tools" -> "Board" -> "Board Manager"**, wait for it to update additional hardware configurations, then type **"HUB 8735"** or **"ideashatch"** in the search bar, you will see Realtek Ameba in the list.
 
@@ -43,7 +44,7 @@
     
     </br>
 
-3. **Select your Ameba model in *"Tools" -> "Board" -> "AmebaPro2 ARM (32-bits) Boards - ideasHatch"***
+4. **Select your Ameba model in *"Tools" -> "Board" -> "AmebaPro2 ARM (32-bits) Boards - ideasHatch"***
 
     > Make sure you select the correct model for your board, otherwise your program might not work properly 
 
