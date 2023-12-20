@@ -1,9 +1,7 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-video-mp4/
-
- For recommended setting to achieve better video quality, please refer to our Ameba FAQ: https://forum.amebaiot.com/t/ameba-faq/1220
+ https://www.amebaiot.com/en/amebapro2-arduino-video-mp4/
  */
 
 #include "StreamIO.h"
@@ -24,7 +22,7 @@
 
 VideoSetting configV1(0);
 VideoSetting configV2(1);
-AudioSetting configA(0);
+AudioSetting configA(3);
 Audio audio;
 AAC aac;
 MP4Recording mp4_1;

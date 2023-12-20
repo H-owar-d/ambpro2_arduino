@@ -21,6 +21,7 @@
 #define ISP_FW_LOCATION		    (USER_DATA_BASE + 0x0C000) //Store the ISP index
 #define NOR_FLASH_FCS           (USER_DATA_BASE + 0x0D000) //Store the FCS data
 #define TUNING_IQ_FW            (USER_DATA_BASE + 0x10000) //Store the Tuning IQ data(max size: 256K, 0xF10000~0xF50000)
+#define CALI_IQ_FW              (USER_DATA_BASE + 0x60000) //Store the mp calibration IQ data(max size: 16K, 0xF60000~0xF64000)
 #define NAND_APP_BASE			0x4000000 /*NAND FLASH FILESYSTEM begin address It need to alignment block size, the default is 512 BLOCK*/
 #define FLASH_APP_BASE			0xE00000  //TODO: configure flash file system size here
 #define NAND_FLASH_FCS          0x7080000 //900*128*1024
@@ -158,6 +159,12 @@
 #endif
 #define CONFIG_LWIP_TCP_RESUME        1
 
+
+/*Enable CONFIG_LWIP_DHCP_FINE_TIMEOUT if lease time is less than or equal to CONFIG_LWIP_DHCP_COARSE_TIMER
+* replace dhcp_coarse_tmr with dhcp_fine_tmr to manage and check for lease timeout
+*/
+#define CONFIG_LWIP_DHCP_FINE_TIMEOUT 0
+
 /****************** For EAP method example *******************/
 //#define CONFIG_EXAMPLE_EAP	0
 
@@ -192,4 +199,8 @@
 
 #define CONFIG_FTL_EN 1
 
+/* For RTK EVB IR GPIO CONTROL
+*  GPIO: F12(IR_CUT) F13(IR_LED)
+*/
+#define CONFIG_RTK_EVB_IR_CTRL 0
 #endif

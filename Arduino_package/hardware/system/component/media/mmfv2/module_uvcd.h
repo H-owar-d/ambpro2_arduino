@@ -18,6 +18,7 @@
 
 #define CMD_UVCD_CALLBACK_SET     	MM_MODULE_CMD(0x00)  // set parameter
 #define CMD_UVCD_CALLBACK_GET     	MM_MODULE_CMD(0x01)  // get parameter
+#define CMD_UVCD_STOP     	        MM_MODULE_CMD(0x02)  // get parameter
 
 struct uvc_format {
 	int width;
@@ -32,6 +33,9 @@ struct uvc_format {
 	int init;//It only support whether the uvc is first init 0:Not initialized 1: Initialized
 };
 
+typedef struct uvcd_ctx_s {
+	void *parent;
+} uvcd_ctx_t;
 
 extern mm_module_t uvcd_module;
 

@@ -1,9 +1,7 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-video-rtsp/
-
- For recommended setting to achieve better video quality, please refer to our Ameba FAQ: https://forum.amebaiot.com/t/ameba-faq/1220
+ https://www.amebaiot.com/en/amebapro2-arduino-video-rtsp/
  */
 
 #include "WiFi.h"
@@ -26,7 +24,7 @@
 
 VideoSetting configV1(VIDEO_FHD, CAM_FPS, VIDEO_H264, 0);
 VideoSetting configV2(VIDEO_HD, CAM_FPS, VIDEO_H264, 0);
-AudioSetting configA(0);
+AudioSetting configA(3);
 Audio audio;
 AAC aac;
 RTSP rtsp1;

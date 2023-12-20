@@ -1,18 +1,18 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-web-client/
+ https://www.amebaiot.com/en/amebapro2-arduino-web-client/
  */
 
 #include <WiFi.h>
 
-char ssid[] = "yourNetwork"; // your network SSID (name)
-char pass[] = "password";    // your network password (use for WPA, or use as key for WEP)
-int keyIndex = 0;            // your network key Index number (needed only for WEP)
+char ssid[] = "Network_SSID";       // your network SSID (name)
+char pass[] = "Password";           // your network password (use for WPA, or use as key for WEP)
+int keyIndex = 0;                   // your network key Index number (needed only for WEP)
+int status = WL_IDLE_STATUS;        // Indicater of Wifi status
 
-int status = WL_IDLE_STATUS;
 //IPAddress server(64,233,189,94);  // numeric IP for Google (no DNS)
-char server[] = "www.google.com";    // name address for Google (using DNS)
+char server[] = "www.google.com";   // name address for Google (using DNS)
 
 WiFiClient client;
 void setup() {

@@ -1,16 +1,15 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-web-client-ssl/
+ https://www.amebaiot.com/en/amebapro2-arduino-web-client-ssl/
  */
 
 #include <WiFi.h>
 
-char ssid[] = "yourNetwork";        // your network SSID (name)
+char ssid[] = "Network_SSID";       // your network SSID (name)
 char pass[] = "Password";           // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;                   // your network key Index number (needed only for WEP)
-
-int status = WL_IDLE_STATUS;
+int status = WL_IDLE_STATUS;        // Indicater of Wifi status
 
 char HTTPS_SERVER[] = "os.mbed.com";
 char HTTPS_PATH[] = "/media/uploads/mbed_official/hello.txt";

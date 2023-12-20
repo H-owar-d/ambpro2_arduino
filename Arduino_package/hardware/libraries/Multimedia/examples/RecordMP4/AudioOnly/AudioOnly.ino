@@ -1,7 +1,7 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-video-mp4/
+ https://www.amebaiot.com/en/amebapro2-arduino-video-mp4/
  */
 
 #include "StreamIO.h"
@@ -15,7 +15,7 @@
 // 2 :  8kHz Mono Digital PDM Mic
 // 3 : 16kHz Mono Digital PDM Mic
 
-AudioSetting configA(0);
+AudioSetting configA(3);
 Audio audio;
 AAC aac;
 MP4Recording mp4;

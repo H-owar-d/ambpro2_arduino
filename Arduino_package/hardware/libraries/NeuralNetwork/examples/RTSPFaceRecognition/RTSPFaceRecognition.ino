@@ -1,18 +1,16 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-neuralnework-face-recognition/
-
- For recommended setting to achieve better video quality, please refer to our Ameba FAQ: https://forum.amebaiot.com/t/ameba-faq/1220
+ https://www.amebaiot.com/en/amebapro2-arduino-neuralnework-face-recognition/
 
  Face registration commands
  --------------------------
  Point the camera at a target face and enter the following commands into the serial monitor,
- Register face:           "REG={Name}"            Ensure that there is only one face detected in frame
- Exit registration mode:  "EXIT"                  Stop trying to register a face before it is successfully registered
- Reset registered faces:  "RESET"                 Forget all previously registered faces
- Backup registered faces to flash:    "BACKUP"    Save registered faces to flash
- Restore registered faces from flash: "RESTORE"   Load registered faces from flash
+ Register face:                       "REG={Name}"  Ensure that there is only one face detected in frame
+ Remove face:                         "DEL={Name}"  Remove a registered face
+ Reset registered faces:              "RESET"       Forget all previously registered faces
+ Backup registered faces to flash:    "BACKUP"      Save registered faces to flash
+ Restore registered faces from flash: "RESTORE"     Load registered faces from flash
 
  NN Model Selection
  -------------------
@@ -41,15 +39,12 @@
 #include "NNFaceDetectionRecognition.h"
 #include "VideoStreamOverlay.h"
 
-#define CHANNEL   0
-#define CHANNELNN 3
+#define CHANNEL     0
+#define CHANNELNN   3
 
 // Customised resolution for NN
-#define NNWIDTH 576
-#define NNHEIGHT 320
-
-#define RECTTEXTLAYER0 OSDLAYER0
-#define RECTTEXTLAYER1 OSDLAYER1
+#define NNWIDTH     576
+#define NNHEIGHT    320
 
 VideoSetting config(VIDEO_FHD, 30, VIDEO_H264, 0);
 VideoSetting configNN(NNWIDTH, NNHEIGHT, 10, VIDEO_RGB, 0);
@@ -59,7 +54,7 @@ StreamIO videoStreamer(1, 1);
 StreamIO videoStreamerFDFR(1, 1);
 StreamIO videoStreamerRGBFD(1, 1);
 
-char ssid[] = "yourNetwork";    // your network SSID (name)
+char ssid[] = "Network_SSID";   // your network SSID (name)
 char pass[] = "Password";       // your network password
 int status = WL_IDLE_STATUS;
 
@@ -69,7 +64,7 @@ int rtsp_portnum;
 void setup() {
     Serial.begin(115200);
 
-    // attempt to connect to Wifi network:
+    // Attempt to connect to Wifi network:
     while (status != WL_CONNECTED) {
         Serial.print("Attempting to connect to WPA SSID: ");
         Serial.println(ssid);
@@ -80,7 +75,7 @@ void setup() {
     }
 
     ip = WiFi.localIP();
-    
+
     // Configure camera video channels with video format information
     // Adjust the bitrate based on your WiFi network quality
     config.setBitrate(2 * 1024 * 1024);     // Recommend to use 2Mbps for RTSP streaming to prevent network congestion
@@ -117,6 +112,7 @@ void setup() {
     if (videoStreamerRGBFD.begin() != 0) {
         Serial.println("StreamIO link start failed");
     }
+
     // Start video channel for NN
     Camera.channelBegin(CHANNELNN);
 
@@ -133,8 +129,9 @@ void loop() {
         if (input.startsWith(String("REG="))){
             String name = input.substring(4);
             facerecog.registerFace(name);
-        } else if (input.startsWith(String("EXIT"))) {
-            facerecog.exitRegisterMode();
+        } else if (input.startsWith(String("DEL="))) {
+            String name = input.substring(4);
+            facerecog.removeFace(name);
         } else if (input.startsWith(String("RESET"))) {
             facerecog.resetRegisteredFace();
         } else if (input.startsWith(String("BACKUP"))) {
@@ -144,11 +141,9 @@ void loop() {
         }
     }
 
-    delay(1000);
-    OSD.createBitmap(CHANNEL,RECTTEXTLAYER0);
-    OSD.createBitmap(CHANNEL,RECTTEXTLAYER1);
-    OSD.update(CHANNEL, RECTTEXTLAYER0);
-    OSD.update(CHANNEL, RECTTEXTLAYER1);
+    delay(2000);
+    OSD.createBitmap(CHANNEL);
+    OSD.update(CHANNEL);
 }
 
 // User callback function for post processing of face recognition results
@@ -162,11 +157,10 @@ void FRPostProcess(std::vector<FaceRecognitionResult> results) {
     Serial.print(":");
     Serial.println(rtsp_portnum);
     Serial.println(" ");
-    
-    printf("Total number of faces detected = %d\r\n", facerecog.getResultCount());
 
-    OSD.createBitmap(CHANNEL, RECTTEXTLAYER0);
-    OSD.createBitmap(CHANNEL, RECTTEXTLAYER1);
+    printf("Total number of faces detected = %d\r\n", facerecog.getResultCount());
+    OSD.createBitmap(CHANNEL);
+
     if (facerecog.getResultCount() > 0) {
         for (uint32_t i = 0; i < facerecog.getResultCount(); i++) {
             FaceRecognitionResult item = results[i];
@@ -177,25 +171,22 @@ void FRPostProcess(std::vector<FaceRecognitionResult> results) {
             int ymin = (int)(item.yMin() * im_h);
             int ymax = (int)(item.yMax() * im_h);
 
-            // Draw boundary box
             uint32_t osd_color;
-            int osd_layer;
             if (String(item.name()) == String("unknown")) {
                 osd_color = OSD_COLOR_RED;
-                osd_layer = RECTTEXTLAYER0;
             } else {
                 osd_color = OSD_COLOR_GREEN;
-                osd_layer = RECTTEXTLAYER1;
             }
+
+            // Draw boundary box
             printf("Face %d name %s:\t%d %d %d %d\n\r", i, item.name(), xmin, xmax, ymin, ymax);
-            OSD.drawRect(CHANNEL, xmin, ymin, xmax, ymax, 3, osd_color, osd_layer);
+            OSD.drawRect(CHANNEL, xmin, ymin, xmax, ymax, 3, osd_color);
 
             // Print identification text above boundary box
             char text_str[40];
             snprintf(text_str, sizeof(text_str), "Face:%s", item.name());
-            OSD.drawText(CHANNEL, xmin, ymin - OSD.getTextHeight(CHANNEL), text_str, osd_color, osd_layer);
+            OSD.drawText(CHANNEL, xmin, ymin - OSD.getTextHeight(CHANNEL), text_str, osd_color);
         }
     }
-    OSD.update(CHANNEL, RECTTEXTLAYER0);
-    OSD.update(CHANNEL, RECTTEXTLAYER1);
+    OSD.update(CHANNEL);
 }

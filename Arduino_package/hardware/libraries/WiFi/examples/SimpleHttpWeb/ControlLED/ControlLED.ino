@@ -1,16 +1,16 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-ameba-web-server/
+ https://www.amebaiot.com/en/amebapro2-arduino-ameba-web-server/
  */
 
 #include <WiFi.h>
 
-char ssid[] = "yourNetwork";        // your network SSID (name)
-char pass[] = "Password";           // your network password
+char ssid[] = "Network_SSID";       // your network SSID (name)
+char pass[] = "Password";           // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;                   // your network key Index number (needed only for WEP)
+int status = WL_IDLE_STATUS;        // Indicater of Wifi status
 
-int status = WL_IDLE_STATUS;
 WiFiServer server(80);
 
 #define LED_PIN LED_B
@@ -45,7 +45,6 @@ void loop() {
                 char c = client.read();         // read a byte, then
                 Serial.write(c);                // print it out the serial monitor
                 if (c == '\n') {                // if the byte is a newline character
-
                     // if the current line is blank, you got two newline characters in a row.
                     // that's the end of the client HTTP request, so send a response:
                     if (currentLine.length() == 0) {

@@ -1,9 +1,7 @@
 /*
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-neuralnework-face-detection/
-
- For recommended setting to achieve better video quality, please refer to our Ameba FAQ: https://forum.amebaiot.com/t/ameba-faq/1220
+ https://www.amebaiot.com/en/amebapro2-arduino-neuralnework-face-detection/
 
  NN Model Selection
  Select Neural Network(NN) task and models using modelSelect(nntask, objdetmodel, facedetmodel, facerecogmodel).
@@ -30,17 +28,12 @@
 #include "NNFaceDetection.h"
 #include "VideoStreamOverlay.h"
 
-#define CHANNEL   0
-#define CHANNELNN 3
+#define CHANNEL     0
+#define CHANNELNN   3
 
 // Lower resolution for NN processing
-#define NNWIDTH  576
-#define NNHEIGHT 320
-
-// OSD layers
-#define RECTLAYER  OSDLAYER0
-#define TEXTLAYER  OSDLAYER1
-#define POINTLAYER OSDLAYER2
+#define NNWIDTH     576
+#define NNHEIGHT    320
 
 VideoSetting config(VIDEO_FHD, 30, VIDEO_H264, 0);
 VideoSetting configNN(NNWIDTH, NNHEIGHT, 10, VIDEO_RGB, 0);
@@ -49,7 +42,7 @@ RTSP rtsp;
 StreamIO videoStreamer(1, 1);
 StreamIO videoStreamerNN(1, 1);
 
-char ssid[] = "yourNetwork";    // your network SSID (name)
+char ssid[] = "Network_SSID";   // your network SSID (name)
 char pass[] = "Password";       // your network password
 int status = WL_IDLE_STATUS;
 
@@ -124,7 +117,7 @@ void loop() {
 void FDPostProcess(std::vector<FaceDetectionResult> results) {
     uint16_t im_h = config.height();
     uint16_t im_w = config.width();
-    
+
     Serial.print("Network URL for RTSP Streaming: ");
     Serial.print("rtsp://");
     Serial.print(ip);
@@ -133,10 +126,8 @@ void FDPostProcess(std::vector<FaceDetectionResult> results) {
     Serial.println(" ");
 
     printf("Total number of faces detected = %d\r\n", facedet.getResultCount());
+    OSD.createBitmap(CHANNEL);
 
-    OSD.createBitmap(CHANNEL, RECTLAYER);
-    OSD.createBitmap(CHANNEL, TEXTLAYER);
-    OSD.createBitmap(CHANNEL, POINTLAYER);
     if (facedet.getResultCount() > 0) {
         for (uint32_t i = 0; i < facedet.getResultCount(); i++) {
             FaceDetectionResult item = results[i];
@@ -149,22 +140,20 @@ void FDPostProcess(std::vector<FaceDetectionResult> results) {
 
             // Draw boundary box
             printf("Face %d confidence %d:\t%d %d %d %d\n\r", i, item.score(), xmin, xmax, ymin, ymax);
-            OSD.drawRect(CHANNEL, xmin, ymin, xmax, ymax, 3, OSD_COLOR_WHITE, RECTLAYER);
+            OSD.drawRect(CHANNEL, xmin, ymin, xmax, ymax, 3, OSD_COLOR_WHITE);
 
             // Print identification text above boundary box
             char text_str[40];
             snprintf(text_str, sizeof(text_str), "%s %d", item.name(), item.score());
-            OSD.drawText(CHANNEL, xmin, ymin - OSD.getTextHeight(CHANNEL), text_str, OSD_COLOR_CYAN, TEXTLAYER);
+            OSD.drawText(CHANNEL, xmin, ymin - OSD.getTextHeight(CHANNEL), text_str, OSD_COLOR_CYAN);
 
             // Draw facial feature points
             for (int j = 0; j < 5; j++) {
                 int x = (int)(item.xFeature(j) * im_w);
                 int y = (int)(item.yFeature(j) * im_h);
-                OSD.drawPoint(CHANNEL, x, y, 8, OSD_COLOR_RED, POINTLAYER);
+                OSD.drawPoint(CHANNEL, x, y, 8, OSD_COLOR_RED);
             }
         }
     }
-    OSD.update(CHANNEL, RECTLAYER);
-    OSD.update(CHANNEL, TEXTLAYER);
-    OSD.update(CHANNEL, POINTLAYER);
+    OSD.update(CHANNEL);
 }

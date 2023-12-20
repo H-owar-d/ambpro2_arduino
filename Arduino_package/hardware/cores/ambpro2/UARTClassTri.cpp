@@ -51,8 +51,7 @@ RingBuffer rx_buffer3;
 //    }
 //}
 
-static void arduino_uart_irq_handler(uint32_t id, SerialIrq event)
-{
+static void arduino_uart_irq_handler(uint32_t id, SerialIrq event) {
     char c;
     RingBuffer *pRxBuffer = (RingBuffer *)id;
 
@@ -67,8 +66,7 @@ static void arduino_uart_irq_handler(uint32_t id, SerialIrq event)
 //    }
 }
 
-UARTClassTri::UARTClassTri(int dwIrq, RingBuffer* pRx_buffer)
-{
+UARTClassTri::UARTClassTri(int dwIrq, RingBuffer* pRx_buffer) {
     _rx_buffer = pRx_buffer;
     _dwIrq = dwIrq;
 }
@@ -76,10 +74,8 @@ UARTClassTri::UARTClassTri(int dwIrq, RingBuffer* pRx_buffer)
 // Protected Methods //////////////////////////////////////////////////////////////
 
 // Public Methods //////////////////////////////////////////////////////////////
-//zzw 
 #if 0
-void UARTClassTri::IrqHandler(void)
-{
+void UARTClassTri::IrqHandler(void) {
     uint8_t     data = 0;
     BOOL        PullMode = _FALSE;
 
@@ -102,8 +98,10 @@ void UARTClassTri::IrqHandler(void)
 }
 #endif
 
-void UARTClassTri::begin(const uint32_t dwBaudRate, uint8_t serial_config_value)
-{
+void UARTClassTri::begin(const uint32_t dwBaudRate, uint8_t serial_config_value) {
+    //amb_ard_pin_check_fun(SERIAL3_TX, PIO_UART);
+    //amb_ard_pin_check_fun(SERIAL3_RX, PIO_UART);
+
     // Log, UART1
     //serial_init(&log_uart_obj, PF_4, PF_3);
     ////serial_init(&log_uart_obj, PF_13, PF_12);
@@ -132,7 +130,7 @@ void UARTClassTri::begin(const uint32_t dwBaudRate, uint8_t serial_config_value)
 #endif
     serial_baud(&uart_obj, UART_BaudRate);
 
-    switch(serial_config_value) {
+    switch (serial_config_value) {
         case SERIAL_7N1:
             serial_format(&uart_obj, 7, ParityNone, 1);
             break;
@@ -194,7 +192,7 @@ void UARTClassTri::begin(const uint32_t dwBaudRate, uint8_t serial_config_value)
             serial_format(&uart_obj, 8, ParityForced0, 2);
             break;
       default:
-    serial_format(&uart_obj, 8, ParityNone, 1);
+        serial_format(&uart_obj, 8, ParityNone, 1);
     }
 
     serial_irq_handler(&uart_obj, arduino_uart_irq_handler, (uint32_t)_rx_buffer);
@@ -202,29 +200,25 @@ void UARTClassTri::begin(const uint32_t dwBaudRate, uint8_t serial_config_value)
     //serial_irq_set(&uart_obj, TxIrq, 1);
 }
 
-void UARTClassTri::end(void)
-{
+void UARTClassTri::end(void) {
     // clear any received data
     _rx_buffer->_iHead = _rx_buffer->_iTail;
 
     serial_free(&uart_obj);
 }
 
-int UARTClassTri::available(void)
-{
+int UARTClassTri::available(void) {
     return (uint32_t)(SERIAL_BUFFER_SIZE + _rx_buffer->_iHead - _rx_buffer->_iTail) % SERIAL_BUFFER_SIZE;
 }
 
-int UARTClassTri::peek(void)
-{
+int UARTClassTri::peek(void) {
     if (_rx_buffer->_iHead == _rx_buffer->_iTail)
         return -1;
 
     return _rx_buffer->_aucBuffer[_rx_buffer->_iTail];
 }
 
-int UARTClassTri::read(void)
-{
+int UARTClassTri::read(void) {
     // if the head isn't ahead of the tail, we don't have any characters
     if (_rx_buffer->_iHead == _rx_buffer->_iTail) {
         return -1;
@@ -235,8 +229,7 @@ int UARTClassTri::read(void)
     return uc;
 }
 
-void UARTClassTri::flush(void)
-{
+void UARTClassTri::flush(void) {
 // TODO: 
 // while ( serial_writable(&(this->sobj)) != 1 );
 /*
@@ -246,8 +239,7 @@ void UARTClassTri::flush(void)
 */
 }
 
-size_t UARTClassTri::write(const uint8_t uc_data)
-{
+size_t UARTClassTri::write(const uint8_t uc_data) {
     serial_putc(&uart_obj, (int)(uc_data));
     return 1;
 }

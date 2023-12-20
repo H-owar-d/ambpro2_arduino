@@ -22,7 +22,7 @@
  by Realtek SG
 
  Example guide:
- https://www.amebaiot.com/en/amebapro2-amb82-mini-arduino-connect-wifi/
+ https://www.amebaiot.com/en/amebapro2-arduino-connect-wifi/
  */
 
 #include <WiFi.h>
@@ -46,7 +46,7 @@ String str_ssid, str_pass, str_key;
 // Emoji characters can be converted into UTF-8 at https://mothereff.in/utf-8
 // char ssid[] = "\xe2\x9c\x8c\xef\xb8\x8f Ameba \xe2\x9c\x8c\xef\xb8\x8f";
 
-char ssid[] = "yourNetwork";                    // your network SSID (name)
+char ssid[] = "Network_SSID";                   // your network SSID (name)
 int keyIndex = 0;                               // your network key Index number
 #if (password_type == 0)
 char key[] = "D0D0DEADF00DABBADEAFBEADED";      // your network key, Exactly 10 or 26 hexadecimal characters
@@ -56,7 +56,7 @@ char pass[] = "D0D0D";                          // your network password, Exactl
     #error                                      // Error unsupported password type
 #endif
 
-int status = WL_IDLE_STATUS;                    // the Wifi radio's status
+int status = WL_IDLE_STATUS;                    // Indicater of Wifi status
 
 void setup() {
     //Initialize serial and wait for port to open:
@@ -86,16 +86,16 @@ void setup() {
         while (Serial.available() == 0) {}
         str_pass = Serial.readString();
         str_pass.trim();
-            if (str_pass.length() != 0) { // user has entered data
-                while (str_pass.length() < 5 ) { // to catch pwd<5 exception
-                    Serial.println("Password cannot be less than 5 characters! Try again");
-                    while (Serial.available() == 0) {}
-                    str_pass = Serial.readString();
-                    str_pass.trim();
-                }
-                    Serial.print("Password entered: ");
-                    Serial.println(str_pass);
+        if (str_pass.length() != 0) { // user has entered data
+            while (str_pass.length() < 5) { // to catch pwd<5 exception
+                Serial.println("Password cannot be less than 5 characters! Try again");
+                while (Serial.available() == 0) {}
+                str_pass = Serial.readString();
+                str_pass.trim();
             }
+            Serial.print("Password entered: ");
+            Serial.println(str_pass);
+        }
 #endif
         Serial.print("Attempting to connect to WEP network, SSID: ");
 #ifndef MANUAL_INPUT
@@ -105,12 +105,12 @@ void setup() {
     #elif (password_type == 1)
         status = WiFi.begin(ssid, keyIndex, pass);
     #else
-        #error                                       // Error unsupported password type
+        #error      // Error unsupported password type
     #endif
 #else
-        char ssid_cust[str_ssid.length()+1];
-        char key_cust[str_key.length()+1];
-        char pass_cust[str_pass.length()+1];
+        char ssid_cust[str_ssid.length() + 1];
+        char key_cust[str_key.length() + 1];
+        char pass_cust[str_pass.length() + 1];
         strcpy(ssid_cust, str_ssid.c_str());
         strcpy(key_cust, str_key.c_str());
         strcpy(pass_cust, str_pass.c_str());
