@@ -416,8 +416,8 @@
               "host": "x86_64-apple-darwin",
               "archiveFileName": "ameba_pro2_tools_macos-1.2.13.tar.gz",
               "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_macos-1.2.13.tar.gz",
-              "checksum": "SHA-256:7fc17fd00c2a795bbe32125326b6414f208eb054aee04b1968fa47647c14b1dc",
-              "size": "17708180"
+              "checksum": "SHA-256:b6a3cda25bf80cd446ce7a051fc86e2bed6c9a9afc021bac340ea2a069b46615",
+              "size": "17708618"
             }
           ]
         },
