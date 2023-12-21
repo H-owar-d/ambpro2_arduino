@@ -402,8 +402,8 @@
               "host": "i686-mingw32",
               "archiveFileName": "ameba_pro2_tools_windows-1.2.13.tar.gz",
               "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_tools_windows-1.2.13.tar.gz",
-              "checksum": "SHA-256:c9d3221fa306245c0f9f6bae6b7ff92c9b95cc8d385cec39af683e55ba121cf3",
-              "size": "10666482"
+              "checksum": "SHA-256:b2a4d9e29d388e322f52b47cb000a5ebd3fb66f6226b5468f9c802aaf90312a0",
+              "size": "22908773"
             },
             {
               "host": "x86_64-pc-linux-gnu",
