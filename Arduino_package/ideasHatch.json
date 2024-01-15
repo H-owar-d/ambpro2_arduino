@@ -21,7 +21,7 @@
           "checksum": "SHA-256:29b3d7acc125bc987c51fc60b3498b1ec3cea392f476e4b882cfc7b81a09117a",
           "size": "94574054",
           "boards": [
-            {"name": "HUB 8735 (RTL8735B)"}
+            {"name": "HUB 8735 (RTL8735B)"},
             {"name": "HUB 8735 ultra (RTL8735B)"}
           ],
           "toolsDependencies": [
