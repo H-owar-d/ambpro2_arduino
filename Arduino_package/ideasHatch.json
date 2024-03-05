@@ -18,8 +18,8 @@
           },
           "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.10-build20240301_HUB8735.tar.gz",
           "archiveFileName": "4.0.10-build20240301_HUB8735.tar.gz",
-          "checksum": "SHA-256:f3dc28600c6502b432f6c0ae82f1f5f9ff2106d5aca368eac36148f34fb98e75",
-          "size": "93009487",
+          "checksum": "SHA-256:5a10eadaa8dd226371da1ee1072b47422257389934905c9b37881bdb16269e55",
+          "size": "93009673",
           "boards": [
             {"name": "HUB 8735 (RTL8735B)"},
             {"name": "HUB 8735 ultra (RTL8735B)"}
