@@ -39,6 +39,11 @@
               "packager": "ideasHatch",
               "name": "ameba_pro2_tools",
               "version": "1.3.4"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_nn_models",
+              "version": "0.0.0"
             }
           ]
         },
@@ -442,6 +447,33 @@
         }
       ],
       "tools": [
+      	{
+          "name": "ameba_pro2_nn_models",
+          "version":"0.0.0",
+          "systems": [
+            {
+              "host":"i686-mingw32",
+              "archiveFileName":"ameba_pro2_nn_models-0.0.0.tar.gz",
+              "url":"https://github.com/ambiot/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_nn_models-0.0.0.tar.gz",
+              "checksum":"SHA-256:908f99599673a047c156901ace70ec91d6e2dff16d3cd378ba7298bc195ce5e6",
+              "size":"26906935"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "archiveFileName":"ameba_pro2_nn_models-0.0.0.tar.gz",
+              "url":"https://github.com/ambiot/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_nn_models-0.0.0.tar.gz",
+              "checksum":"SHA-256:908f99599673a047c156901ace70ec91d6e2dff16d3cd378ba7298bc195ce5e6",
+              "size":"26906935"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "archiveFileName":"ameba_pro2_nn_models-0.0.0.tar.gz",
+              "url":"https://github.com/ambiot/ambpro2_arduino/raw/dev/Arduino_package/release/ameba_pro2_nn_models-0.0.0.tar.gz",
+              "checksum":"SHA-256:908f99599673a047c156901ace70ec91d6e2dff16d3cd378ba7298bc195ce5e6",
+              "size":"26906935"
+            }
+          ]
+        },
 		{
           "name": "ameba_pro2_toolchain",
           "version":"1.0.1-p1",
