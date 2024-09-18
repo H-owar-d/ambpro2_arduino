@@ -11,6 +11,45 @@
       {
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
+          "version": "4.0.13-Release",
+          "category": "Contributed",
+          "help": {
+            "online": "https://forum.amebaiot.com/"
+          },
+          "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.13-build20240910_HUB8735.tar.gz",
+          "archiveFileName": "4.0.13-build20240910_HUB8735.tar.gz",
+          "checksum": "SHA-256:5cb223d7daa00c8e7cccc3835b5919340b157c74e7706e8c225d86e7396481e8",
+          "size": "67624034",
+          "boards": [
+            {"name": "HUB 8735 (RTL8735B)"},
+            {"name": "HUB 8735 ultra (RTL8735B)"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_toolchain",
+              "version": "1.0.1-p1"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_toolchain2",
+              "version": "1.0.1-p2"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_tools",
+              "version": "1.3.5"
+            },
+            {
+              "packager": "ideasHatch",
+              "name": "ameba_pro2_nn_models",
+              "version": "0.0.0"
+            }
+          ]
+      },
+      {
+          "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
+          "architecture": "AmebaPro2",
           "version": "4.0.12-Release",
           "category": "Contributed",
           "help": {
@@ -46,7 +85,7 @@
               "version": "0.0.0"
             }
           ]
-        },      
+        },
       	{
           "name": "ideasHatch Ameba Boards (32-bit Arm v8M @500MHz)",
           "architecture": "AmebaPro2",
