@@ -16,10 +16,10 @@
           "help": {
             "online": "https://forum.amebaiot.com/"
           },
-          "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.13-build20240910_HUB8735.tar.gz",
-          "archiveFileName": "4.0.13-build20240910_HUB8735.tar.gz",
-          "checksum": "SHA-256:5cb223d7daa00c8e7cccc3835b5919340b157c74e7706e8c225d86e7396481e8",
-          "size": "67624034",
+          "url": "https://github.com/H-owar-d/ambpro2_arduino/raw/dev/Arduino_package/release/4.0.13-build20240918_HUB8735.tar.gz",
+          "archiveFileName": "4.0.13-build20240918_HUB8735.tar.gz",
+          "checksum": "SHA-256:54d39983b9f7c2de60516b0ad2aa957c90350bb82523a9aed13d39f453283f70",
+          "size": "67630156",
           "boards": [
             {"name": "HUB 8735 (RTL8735B)"},
             {"name": "HUB 8735 ultra (RTL8735B)"}
